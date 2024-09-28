@@ -1,0 +1,229 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes. Error detail: AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:44), pid=10860, tid=26664
+#
+# JRE version:  (22.0.1+8) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (22.0.1+8-16, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF-8 --enable-preview --module-path=C:\Users\psc\Documents\NetBeansProjects\Bank Management System\build\classes bank.management.system.Transactions
+
+Host: Intel(R) Core(TM) i3-1005G1 CPU @ 1.20GHz, 4 cores, 3G,  Windows 11 , 64 bit Build 22621 (10.0.22621.3958)
+Time: Tue Aug 27 21:29:57 2024 India Standard Time elapsed time: 0.024781 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000011151f58ad0):  JavaThread "Unknown thread" [_thread_in_vm, id=26664, stack(0x0000000905c00000,0x0000000905d00000) (1024K)]
+
+Stack: [0x0000000905c00000,0x0000000905d00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6e2279]  (no source info available)
+V  [jvm.dll+0x874e33]  (no source info available)
+V  [jvm.dll+0x87725e]  (no source info available)
+V  [jvm.dll+0x877933]  (no source info available)
+V  [jvm.dll+0x27fd76]  (no source info available)
+V  [jvm.dll+0xbe877]  (no source info available)
+V  [jvm.dll+0x32a5a8]  (no source info available)
+V  [jvm.dll+0x83cca0]  (no source info available)
+V  [jvm.dll+0x3c0d71]  (no source info available)
+V  [jvm.dll+0x825ccc]  (no source info available)
+V  [jvm.dll+0x45b8fe]  (no source info available)
+V  [jvm.dll+0x45d781]  (no source info available)
+C  [jli.dll+0x52a3]  (no source info available)
+C  [ucrtbase.dll+0x29333]  (no source info available)
+C  [KERNEL32.DLL+0x1257d]  (no source info available)
+C  [ntdll.dll+0x5af28]  (no source info available)
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ff8f571b1c8, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+
+=>0x0000011151f58ad0 (exited) JavaThread "Unknown thread"    [_thread_in_vm, id=26664, stack(0x0000000905c00000,0x0000000905d00000) (1024K)]
+Total: 1
+
+Threads with active compile tasks:
+Total: 0
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap address: 0x0000000000000000, size: 0 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 5 size 8 Array Of Cards #cards 12 size 40 Howl #buckets 4 coarsen threshold 1843 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 2048
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.017 Loaded shared library C:\Program Files\Java\jdk-22\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff68a1c0000 - 0x00007ff68a1d0000 	C:\Program Files\Java\jdk-22\bin\java.exe
+0x00007ff95cd10000 - 0x00007ff95cf27000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff95b8e0000 - 0x00007ff95b9a4000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff95a030000 - 0x00007ff95a3dd000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff95a760000 - 0x00007ff95a871000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff950ec0000 - 0x00007ff950edb000 	C:\Program Files\Java\jdk-22\bin\VCRUNTIME140.dll
+0x00007ff950ef0000 - 0x00007ff950f07000 	C:\Program Files\Java\jdk-22\bin\jli.dll
+0x00007ff95aba0000 - 0x00007ff95ac52000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff95c6b0000 - 0x00007ff95c757000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff95cc20000 - 0x00007ff95ccc9000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff95a500000 - 0x00007ff95a528000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007ff95c510000 - 0x00007ff95c624000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff95c870000 - 0x00007ff95ca1e000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff95aa10000 - 0x00007ff95aa36000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff942170000 - 0x00007ff942403000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955\COMCTL32.dll
+0x00007ff95c4e0000 - 0x00007ff95c509000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff95a3e0000 - 0x00007ff95a4f9000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff95a970000 - 0x00007ff95aa0a000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff952000000 - 0x00007ff95200a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff95cbd0000 - 0x00007ff95cc01000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ff950eb0000 - 0x00007ff950ebc000 	C:\Program Files\Java\jdk-22\bin\vcruntime140_1.dll
+0x00007ff94d420000 - 0x00007ff94d4ae000 	C:\Program Files\Java\jdk-22\bin\msvcp140.dll
+0x00007ff8f4b30000 - 0x00007ff8f5877000 	C:\Program Files\Java\jdk-22\bin\server\jvm.dll
+0x00007ff95ac60000 - 0x00007ff95acd1000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff952f50000 - 0x00007ff952f84000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff959ef0000 - 0x00007ff959f3d000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ff959ed0000 - 0x00007ff959ee3000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ff959060000 - 0x00007ff959078000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff950ea0000 - 0x00007ff950eaa000 	C:\Program Files\Java\jdk-22\bin\jimage.dll
+0x00007ff9579e0000 - 0x00007ff957c12000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ff95c150000 - 0x00007ff95c4dd000 	C:\WINDOWS\System32\combase.dll
+0x00007ff95c050000 - 0x00007ff95c127000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ff952150000 - 0x00007ff952182000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ff95a8f0000 - 0x00007ff95a96b000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff94d400000 - 0x00007ff94d41e000 	C:\Program Files\Java\jdk-22\bin\java.dll
+0x00007ff95af90000 - 0x00007ff95b7f8000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ff95ade0000 - 0x00007ff95af85000 	C:\WINDOWS\System32\ole32.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-22\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955;C:\Program Files\Java\jdk-22\bin\server
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 --enable-preview --module-path=C:\Users\psc\Documents\NetBeansProjects\Bank Management System\build\classes 
+java_command: bank.management.system.Transactions
+java_class_path (initial): C:\jcalendar-tz-1.3.3-4.jar;C:\mysql-connector-j-9.0.0.jar;C:\Users\psc\Documents\NetBeansProjects\Bank Management System\build\classes
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+   size_t InitialHeapSize                          = 62914560                                  {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1006632960                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5832780                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122912730                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122912730                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 1006632960                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\MinGW\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Program Files\Mantra\RDService\MFS100;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.1.2\bin;;C:\Users\psc\AppData\Local\Programs\Microsoft VS Code\bin
+USERNAME=psc
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 126 Stepping 5, GenuineIntel
+TMP=C:\Users\psc\AppData\Local\Temp
+TEMP=C:\Users\psc\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 22621 (10.0.22621.3958)
+OS uptime: 5 days 14:03 hours
+
+CPU: total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 126 stepping 5 microcode 0xa6, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, avx512f, avx512dq, avx512cd, avx512bw, avx512vl, sha, fma, vzeroupper, avx512_vpopcntdq, avx512_vpclmulqdq, avx512_vaes, avx512_vnni, clflush, clflushopt, avx512_vbmi2, avx512_vbmi, rdtscp, rdpid, fsrm, gfni, avx512_bitalg, f16c, pku, avx512_ifma
+Processor Information for processor 0
+  Max Mhz: 1201, Current Mhz: 1201, Mhz Limit: 1201
+Processor Information for processor 1
+  Max Mhz: 1201, Current Mhz: 1201, Mhz Limit: 1201
+Processor Information for processor 2
+  Max Mhz: 1201, Current Mhz: 1000, Mhz Limit: 1201
+Processor Information for processor 3
+  Max Mhz: 1201, Current Mhz: 1201, Mhz Limit: 1201
+
+Memory: 4k page, system-wide physical 3836M (237M free)
+TotalPageFile size 15612M (AvailPageFile size 4M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 11M, peak: 12M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (22.0.1+8-16) for windows-amd64 JRE (22.0.1+8-16), built on 2024-03-12T10:33:16Z by "mach5one" with MS VC++ 17.6 (VS2022)
+
+END.
