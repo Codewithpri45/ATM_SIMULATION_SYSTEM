@@ -8,6 +8,17 @@ import javax.swing.*;
 public class Transactions extends JFrame implements ActionListener{
     JButton deposite,withdra,fastcash,statement,pinchange,balancecheck ,exit;
   String pinnumber;
+
+    public JButton getDeposite() {
+        return deposite;
+    }
+
+    public JButton getWithdra() {
+        return withdra;
+    }
+
+  
+   
     public Transactions( String pin)  {
         this.pinnumber=pin;
         setLayout(null);
@@ -86,7 +97,7 @@ public class Transactions extends JFrame implements ActionListener{
         else if (ae.getSource()==withdra)
         {
             setVisible(false);
-            new Withdraw(pinnumber).setVisible(true);
+            new AccType(pinnumber).setVisible(true);
         }
         else if(ae.getSource()==fastcash)
         {
@@ -111,7 +122,8 @@ public class Transactions extends JFrame implements ActionListener{
     
     public static void main(String[] args) {
         
-        new Transactions("");
+         new Transactions("");
+        
         
     }
 }

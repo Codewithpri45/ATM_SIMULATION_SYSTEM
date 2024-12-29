@@ -1,9 +1,11 @@
 
 package bank.management.system;
 
+import com.mysql.cj.protocol.Resultset;
 import javax.swing.*;
 import  java.awt.*;
 import  java.awt.event.*;
+import java.sql.ResultSet;
 import java.util.*;
 
 public class Withdraw  extends JFrame implements ActionListener{
@@ -56,44 +58,97 @@ public class Withdraw  extends JFrame implements ActionListener{
         setVisible(true);
       
     }
-     public void actionPerformed(ActionEvent ae)
-     {
-         if (ae.getSource()==withdraw) {
-             
-             String numbers= amount.getText();
-             Date dates = new Date();
-             
-             if (numbers.equals("")) {
-                 JOptionPane.showMessageDialog(null,"Please Enter Amount !");
-             }
-         
-             else{
-                 try{
-                 Conn c = new Conn();
-                 String query = "insert into bank values('"+pinnumber+"','"+dates+"','Withdrawl','"+numbers+"')";
-                 c.s.executeUpdate(query);
-                 
-                 JOptionPane.showMessageDialog(null, "Rs "+numbers+" Withdraw Successfully!");
-                     setVisible(false);
-                     new Transactions(pinnumber).setVisible(true);
-                 }
-                 catch(Exception e)
-                 {
-                     System.out.println(e);
-                 }
-         }
-         }       
-         else if(ae.getSource()==back)
-         {
-             setVisible(false);
-             new Transactions(pinnumber).setVisible(true);
-         }
-     }
 
-
-     
-    public static void main(String[] args) {
+public void actionPerformed(ActionEvent ae) {
+    if (ae.getSource() == withdraw) {
+        String numbers = amount.getText();
+        Date dates = new Date();
         
-        new Withdraw("");
+        if (numbers.equals("")) {
+            JOptionPane.showMessageDialog(null, "Please Enter Amount!");
+            return;
+        }
+        
+        if (!numbers.matches("\\d+")) {
+            JOptionPane.showMessageDialog(null, "Please enter a valid numerical amount!");
+            return;
+        }
+        
+        int withdrawalAmount = Integer.parseInt(numbers);
+
+        try {
+            Conn c = new Conn();
+            
+            // Query to get the current balance for the user
+            String balanceQuery = "SELECT SUM(CASE WHEN type = 'Deposit' THEN amount ELSE -amount END) AS balance FROM bank WHERE pin = '" + pinnumber + "'";
+            ResultSet rs = c.s.executeQuery(balanceQuery);
+            
+            int currentBalance = 0;
+            if (rs.next()) {
+                currentBalance = rs.getInt("balance");
+            }
+            
+            // Check if the withdrawal amount exceeds the current balance
+            if (withdrawalAmount > currentBalance) {
+                JOptionPane.showMessageDialog(null, "Insufficient Balance! Your current balance is Rs " + currentBalance);
+                return;
+            }
+            
+            // If sufficient balance, proceed with the withdrawal
+            String query = "insert into bank values('" + pinnumber + "','" + dates + "','Withdrawl','" + numbers + "')";
+            c.s.executeUpdate(query);
+            
+            JOptionPane.showMessageDialog(null, "Rs " + numbers + " Withdraw Successfully!");
+            setVisible(false);
+            new Transactions(pinnumber).setVisible(true);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "An error occurred: " + e.getMessage());
+        }
+    } else if (ae.getSource() == back) {
+        setVisible(false);
+        new Transactions(pinnumber).setVisible(true);
     }
 }
+}
+
+//     public void actionPerformed(ActionEvent ae)
+//     {
+//         if (ae.getSource()==withdraw) {
+//             
+//             String numbers= amount.getText();
+//             Date dates = new Date();
+//             
+//             if (numbers.equals("")) {
+//                 JOptionPane.showMessageDialog(null,"Please Enter Amount !");
+//             }
+//         
+//             else{
+//                 try{
+//                 Conn c = new Conn();
+//                 String query = "insert into bank values('"+pinnumber+"','"+dates+"','Withdrawl','"+numbers+"')";
+//                 c.s.executeUpdate(query);
+//                 
+//                 JOptionPane.showMessageDialog(null, "Rs "+numbers+" Withdraw Successfully!");
+//                     setVisible(false);
+//                     new Transactions(pinnumber).setVisible(true);
+//                 }
+//                 catch(Exception e)
+//                 {
+//                     System.out.println(e);
+//                 }
+//         }
+//         }       
+//         else if(ae.getSource()==back)
+//         {
+//             setVisible(false);
+//             new Transactions(pinnumber).setVisible(true);
+//         }
+//     }
+//
+//
+//     
+//    public static void main(String[] args) {
+//        
+//        new Withdraw("");
+//    }
+//}

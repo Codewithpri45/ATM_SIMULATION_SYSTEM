@@ -28,33 +28,33 @@ public class SignupThree extends JFrame implements ActionListener{
         accountDetails.setBounds(200, 50, 350, 22);
         add(accountDetails);
         
-        JLabel type = new JLabel("Account Type:");
+        JLabel type = new JLabel("Account Type? :");
         type.setFont(new Font("Raleway" , Font.BOLD,14));
-        type.setBounds(75, 110, 110, 21);
+        type.setBounds(75, 110, 115, 21);
         add(type);
         
         r1 = new JRadioButton("Saving Account");
         r1.setFont(new Font("Raleway" , Font.BOLD,12));
-        r1.setBounds(70, 145 , 180, 19);
+        r1.setBounds(70, 145 , 120, 19);
         r1.setBackground(Color.WHITE);
         add(r1);
         
         
          r2 = new JRadioButton("Fixed Deposit Account");
         r2.setFont(new Font("Raleway" , Font.BOLD,12));
-        r2.setBounds(250, 145 , 400, 19);
+        r2.setBounds(250, 145 , 185, 19);
         r2.setBackground(Color.WHITE);
         add(r2);
        
          r3 = new JRadioButton("Current Account");
         r3.setFont(new Font("Raleway" , Font.BOLD,12));
-        r3.setBounds(70, 165 , 170, 19);
+        r3.setBounds(70, 167 , 120, 19);
         r3.setBackground(Color.WHITE);
         add(r3);
                 
         r4 = new JRadioButton("Reccuring Deposit Account");
         r4.setFont(new Font("Raleway" , Font.BOLD,12));
-        r4.setBounds(250, 165, 400, 19);
+        r4.setBounds(250, 167, 185, 19);
         r4.setBackground(Color.WHITE);
         add(r4);
         
@@ -69,12 +69,12 @@ public class SignupThree extends JFrame implements ActionListener{
         card.setBounds(75, 207, 110, 21);
         add(card);
         
-        JLabel dummy= new JLabel("XXXX-XXXX-XXXX-8234");
+        JLabel dummy= new JLabel("XXXX-XXXX-8234");
         dummy.setFont(new Font("Raleway", Font.BOLD,12));
         dummy.setBounds(200, 209, 300, 18);
         add(dummy);
         
-        JLabel msg= new JLabel("Your 16 Digit Card Number");
+        JLabel msg= new JLabel("Your 12 Digit Card Number");
         msg.setFont(new Font("Raleway", Font.BOLD,8));
         msg.setBounds(76, 228, 300, 15);
         add(msg);
@@ -104,44 +104,44 @@ public class SignupThree extends JFrame implements ActionListener{
         c1 = new JCheckBox("ATM Card");
         c1.setBackground(Color.WHITE);
         c1.setFont(new Font("Raleway",Font.BOLD,11));
-        c1.setBounds(75,335, 150, 15);
+        c1.setBounds(75,335, 105, 15);
         add(c1);
         
         c2 = new JCheckBox("Internet Banking");
         c2.setBackground(Color.WHITE);
         c2.setFont(new Font("Raleway",Font.BOLD,11));
-        c2.setBounds(230,335, 120, 15);
+        c2.setBounds(230,335, 125, 15);
         add(c2);
         
         c3 = new JCheckBox("Mobile Banking");
         c3.setBackground(Color.WHITE);
         c3.setFont(new Font("Raleway",Font.BOLD,11));
-        c3.setBounds(75,365, 120, 15);
+        c3.setBounds(75,365, 105, 15);
         add(c3);
         
         c4 = new JCheckBox("Email & SMS Alerts");
         c4.setBackground(Color.WHITE);
         c4.setFont(new Font("Raleway",Font.BOLD,11));
-        c4.setBounds(230,365, 180, 15);
+        c4.setBounds(230,365, 125, 15);
         add(c4);
         
         c5 = new JCheckBox("Cheque Book");
         c5.setBackground(Color.WHITE);
         c5.setFont(new Font("Raleway",Font.BOLD,11));
-        c5.setBounds(75,395, 120, 15);
+        c5.setBounds(75,395, 105, 15);
         add(c5);
         
         c6 = new JCheckBox("E-Statements");
         c6.setBackground(Color.WHITE);
         c6.setFont(new Font("Raleway",Font.BOLD,11));
-        c6.setBounds(230,395, 150, 15);
+        c6.setBounds(230,395, 125 , 15);
         add(c6);
         
         
         c7 = new JCheckBox("I hereby declares that the above entered details are correct to the best of my knowledge");
         c7.setBackground(Color.WHITE);
         c7.setFont(new Font("Raleway",Font.BOLD,10));
-        c7.setBounds(75,450, 500, 15);
+        c7.setBounds(75,450, 450, 15);
         add(c7);
         
         cancel = new JButton("Cancel");
@@ -158,8 +158,9 @@ public class SignupThree extends JFrame implements ActionListener{
         submit.addActionListener(this);
         add(submit);
         
-        
-       getContentPane().setBackground(Color.WHITE);
+        Color customColor = new Color(176,196,222);
+        getContentPane().setBackground(customColor);
+//        getContentPane().setBackground(Color.WHITE);
         setSize(650,600);
         setLocation(300, 35);
         setVisible(true);
@@ -184,34 +185,34 @@ public class SignupThree extends JFrame implements ActionListener{
                accountType="Reccuring Deposit Account"; 
             }
             
-            String cardNumber =""+Math.abs((ran.nextLong()%90000000L)+ 5040936000000000L);
+            String cardNumber =""+Math.abs((ran.nextLong()%9000L)+ 504093600000L);
             
             pinnumber= pin;
             
             String facilities ="";
             
             if (c1.isSelected()) {
-                facilities=facilities+" ATM Card";
+                facilities=facilities+" ATM Card,";
             }
-            else if (c2.isSelected()) {
-               facilities= facilities+" Internet Banking" ;
+             if (c2.isSelected()) {
+               facilities= facilities+" Internet Banking," ;
             }
-            else if (c3.isSelected()) {
-              facilities= facilities+" Mobile Banking";  
+            if (c3.isSelected()) {
+              facilities= facilities+" Mobile Banking,";  
             }
-            else if (c4.isSelected()) {
-               facilities= facilities+ " Email & SMS Alerts" ;
+             if (c4.isSelected()) {
+               facilities= facilities+ " Email & SMS Alerts," ;
             }
-            else if (c5.isSelected()) {
-              facilities= facilities+" Cheque Book" ; 
+            if (c5.isSelected()) {
+              facilities= facilities+" Cheque Book," ; 
             }
-            else if (c6.isSelected()) {
+            if (c6.isSelected()) {
                 facilities= facilities+" E-Statements";
             }
             
             try {
                
-                if (accountType.equals("")) {
+                if (accountType==null) {
                   
                     JOptionPane.showMessageDialog(null, "Account Type is Required");
                 }
@@ -228,7 +229,8 @@ public class SignupThree extends JFrame implements ActionListener{
                     
                  JOptionPane.showMessageDialog(null, "Card Number: "+ cardNumber + "\n Pin: "+pinnumber);
                     setVisible(false);
-                    new Deposite(pinnumber).setVisible(true);
+//                    new Deposite(pinnumber).setVisible(true);
+                     new Login().setVisible(true);
                 }
                 
             } catch (Exception e) {

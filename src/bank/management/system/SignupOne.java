@@ -21,6 +21,7 @@ public class SignupOne extends JFrame implements ActionListener{
         
     public SignupOne() {
         setLayout(null);
+        setTitle("NEW ACCOUNT APPLICATION FROM - PAGE 1");
         
         JLabel formno = new JLabel("APPLICATION FORM NO. " + random);
         formno.setFont(new Font("Raleway" , Font.BOLD,26));
@@ -39,7 +40,7 @@ public class SignupOne extends JFrame implements ActionListener{
         
         nameTextField = new JTextField();
         nameTextField.setFont(new Font("Raleway" ,Font.BOLD,12));
-        nameTextField.setBounds(200,100,200,21);
+        nameTextField.setBounds(195,100,208,21);
         add(nameTextField);
         
          JLabel fname = new JLabel("Father's Name: ");
@@ -49,7 +50,7 @@ public class SignupOne extends JFrame implements ActionListener{
         
         fnameTextField = new JTextField();
         fnameTextField.setFont(new Font("Raleway" ,Font.BOLD,12));
-        fnameTextField.setBounds(200,140,200,21);
+        fnameTextField.setBounds(195,140,208,21);
         add(fnameTextField);
         
          JLabel dob = new JLabel("Date Of Birth: ");
@@ -58,7 +59,7 @@ public class SignupOne extends JFrame implements ActionListener{
         add(dob);
         
         dateChooser = new JDateChooser();
-        dateChooser.setBounds(200, 175, 200, 21);
+        dateChooser.setBounds(195, 175, 208, 21);
         dateChooser.setForeground(Color.BLACK);
         add(dateChooser);
         
@@ -73,12 +74,12 @@ public class SignupOne extends JFrame implements ActionListener{
          add(radioButtonMale);
          
         radioButtonFemale= new JRadioButton("Female");
-        radioButtonFemale.setBounds(260, 210, 80, 21);
+        radioButtonFemale.setBounds(260, 210, 68, 21);
         radioButtonFemale.setBackground(Color.WHITE);
         add(radioButtonFemale);
         
         other = new JRadioButton("Others");
-        other.setBounds(340, 210, 70, 21);
+        other.setBounds(333, 210, 70, 21);
         other.setBackground(Color.WHITE);
         add(other);
         
@@ -94,7 +95,7 @@ public class SignupOne extends JFrame implements ActionListener{
         
         emailTextField = new JTextField();
         emailTextField.setFont(new Font("Raleway" ,Font.BOLD,12));
-        emailTextField.setBounds(200,245,200,21);
+        emailTextField.setBounds(195,245,208,21);
         add(emailTextField);
         
         
@@ -104,17 +105,17 @@ public class SignupOne extends JFrame implements ActionListener{
         add(marital);
         
         single= new JRadioButton("Single");
-        single.setBounds(195, 280, 70, 21);
+        single.setBounds(195, 280, 65, 21);
         single.setBackground(Color.WHITE);
          add(single);
          
         married= new JRadioButton("Married");
-        married.setBounds(265, 280, 75, 21);
+        married.setBounds(265, 280, 70, 21);
         married.setBackground(Color.WHITE);
         add(married);
         
         otherm = new JRadioButton("Others");
-        otherm.setBounds(340, 280, 70, 21);
+        otherm.setBounds(340, 280, 64, 21);
         otherm.setBackground(Color.WHITE);
         add(otherm);
         
@@ -131,7 +132,7 @@ public class SignupOne extends JFrame implements ActionListener{
         
         addressTextField = new JTextField();
         addressTextField.setFont(new Font("Raleway" ,Font.BOLD,12));
-        addressTextField.setBounds(200,315,200,21);
+        addressTextField.setBounds(195,315,208,21);
         add(addressTextField);
         
         JLabel city = new JLabel("City:");
@@ -141,7 +142,7 @@ public class SignupOne extends JFrame implements ActionListener{
         
         cityTextField = new JTextField();
         cityTextField.setFont(new Font("Raleway" ,Font.BOLD,12));
-        cityTextField.setBounds(200,350,200,21);
+        cityTextField.setBounds(195,350,208,21);
         add(cityTextField);
         
         
@@ -152,7 +153,7 @@ public class SignupOne extends JFrame implements ActionListener{
         
         stateTextField = new JTextField();
         stateTextField.setFont(new Font("Raleway" ,Font.BOLD,12));
-        stateTextField.setBounds(200,385,200,21);
+        stateTextField.setBounds(195,385,208,21);
         add(stateTextField);
         
          JLabel pincode = new JLabel("PinCode: ");
@@ -162,7 +163,7 @@ public class SignupOne extends JFrame implements ActionListener{
         
         pincodeTextField = new JTextField();
         pincodeTextField.setFont(new Font("Raleway" ,Font.BOLD,12));
-        pincodeTextField.setBounds(200,420,200,21);
+        pincodeTextField.setBounds(195,420,208,21);
         add(pincodeTextField);
         
         next = new JButton("Next");
@@ -172,8 +173,9 @@ public class SignupOne extends JFrame implements ActionListener{
         next.addActionListener(this);
         add(next);
         
-        
-        getContentPane().setBackground(Color.WHITE);
+        Color customColor = new Color(176,196,222); 
+        getContentPane().setBackground(customColor);
+//        getContentPane().setBackground(Color.WHITE);
         setSize(650,600);
         setLocation(300, 35);
         setVisible(true);
@@ -228,6 +230,16 @@ public class SignupOne extends JFrame implements ActionListener{
             if(name.equals(""))
             {
                 JOptionPane.showMessageDialog(null, "Name Is Required !");
+                
+            }
+            else if(fname.equals(""))
+            {
+                JOptionPane.showMessageDialog(null, " Father's Name Is Required !");
+                
+            }
+            else if(dob.equals(""))
+            {
+                JOptionPane.showMessageDialog(null, "DOB Is Required !");
                 
             }
             else{

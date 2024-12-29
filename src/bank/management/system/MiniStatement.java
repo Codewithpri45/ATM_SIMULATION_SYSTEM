@@ -40,7 +40,7 @@ public class MiniStatement extends  JFrame{
               
               while(rs.next())
               {
-                  card.setText("Card Number: "+rs.getString("card_Number").substring(0,4)+"XXXXXXXX"+ rs.getString("card_Number").substring(12));
+                  card.setText("Card Number: "+rs.getString("card_Number").substring(0,4)+"XXXX"+ rs.getString("card_Number").substring(8));
               }
             
         } catch (Exception e) {
